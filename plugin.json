@@ -1,19 +1,29 @@
 {
-    "name": "<TODO: your plugin name>",
-    "url": "<TODO: Your Plugin URL here>",
-    "description": "<TODO: Your Plugin description here>",
-    "main": "index.js",
+    "name": "Calendly Event Enricher",
+    "url": "https://github.com/PostHog/calendly-app",
+    "description": "Enriches Calendly events with additional event, owner and attendee information",
+    "main": "index.ts",
     "posthogVersion": ">= 1.25.0",
     "config": [
         {
-            "markdown": "<TODO: your plugin config, remove if none>"
+            "markdown": "This app requires the input events to have both a `calendly_event_uri` and `calendly_invitee_uri` properties in line with the data populated in the `calendlyEventListener()` in [react-calendly](https://www.npmjs.com/package/react-calendly) "
         },
         {
-            "key": "greeting",
-            "name": "What greeting would you like to use?",
+            "key": "calendlyApiKey",
+            "name": "Calendly API Key",
             "type": "string",
-            "default": "Hello World!",
-            "required": false
+            "secret": true,
+            "hint": "A Calendly API Key - can be obtained from https://calendly.com/integrations/api_webhooks",
+            "default": "",
+            "required": true
+        },
+        {
+            "key": "calendlyEventName",
+            "name": "Event Name",
+            "type": "string",
+            "hint": "The name of the PostHog events which track Calendly event creation",
+            "default": "calendly.event_scheduled",
+            "required": true
         }
     ]
 }
