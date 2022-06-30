@@ -1,4 +1,4 @@
-async function setupPlugin({ config, global, storage }) {
+async function setupPlugin({ config, global }) {
     global.calendlyEventName = config.calendlyEventName
 
     global.defaultHeaders = {
