@@ -1,7 +1,7 @@
 {
     "name": "Calendly Event Enricher",
     "url": "https://github.com/PostHog/calendly-app",
-    "description": "Enriches Calendly events with additional event, owner and attendee information",
+    "description": "Syncs extra event (start, end, name) and attendee (email, questions, answers) details to PostHog Calendly Events.  Designed to be used in combination with react-calendly.",
     "main": "index.ts",
     "posthogVersion": ">= 1.25.0",
     "config": [
