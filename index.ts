@@ -8,7 +8,12 @@ async function setupPlugin({ config, global }) {
         },
     }
 
-    const authResponse = await fetch('https://api.calendly.com/users/me', global.defaultHeaders)
+    let authResponse
+    try {
+        authResponse = await fetch('https://api.calendly.com/users/me', global.defaultHeaders)
+    } catch (e) {
+        throw new RetryError(e.message)
+    }
 
     if (!authResponse.ok) {
         throw new Error(
