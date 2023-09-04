@@ -1,4 +1,8 @@
 # PostHog Plugin: Calendly
+
+> **Warning**
+> This plugin has been deprecated, and we currently have no plans to bring it back. One option is to use [Calendly's webhook](https://help.calendly.com/hc/en-us/articles/223195488-Getting-started-with-webhooks#getting-started-with-webhooks-0-0) system.
+
 ## Category: Data in
 Enrich Calendly events which have `calendly_event_url` and `calendly_invitee_url` properties set with additional
 information from those URLs.  Set the Calendly API key and the event name to watch for enrichment.
